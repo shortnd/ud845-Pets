@@ -7,7 +7,7 @@ public final class PetContract {
 
     private PetContract() {}
 
-    public static abstract class PetEntry implements BaseColumns {
+    public static final class PetEntry implements BaseColumns {
 
         /* CONSTANTS FOR TABLE INFO */
         // Table name
@@ -21,9 +21,11 @@ public final class PetContract {
         public static final String COLUMN_PET_WEIGHT = "weight";
 
         /* CONSTANTS FOR GENDER */
+        public static final int GENDER_UNKNOWN = 0;
         public static final int GENDER_MALE = 1;
         public static final int GENDER_FEMALE = 2;
-        public static final int GENDER_UNKNOWN = 0;
+
     }
+
 
 }
