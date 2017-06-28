@@ -15,6 +15,9 @@ public class PetProvider extends ContentProvider {
      */
     public static final String LOG_TAG = PetProvider.class.getSimpleName();
 
+    /** Database helper method */
+    private PetDbHelper mDbHelper;
+
 
     /**
      * Initialize the provider and the database helper object.
@@ -22,7 +25,7 @@ public class PetProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         // TODO: Create and initialize a PetDbHelper object to gain access to the pets database.
-        PetDbHelper mDbHelper = new PetDbHelper(getContext());
+        mDbHelper = new PetDbHelper(getContext());
         // Make sure the variable is a global variable, so it can be referenced from other
         // ContentProvider methods
         return true;
