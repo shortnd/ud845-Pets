@@ -29,30 +29,46 @@ public final class PetContract {
     public static final String PATH_PET = "pets";
 
 
-    private PetContract() {}
+    private PetContract() {
+    }
 
     public static final class PetEntry implements BaseColumns {
 
-        /** CONSTANTS FOR TABLE INFO */
+        /**
+         * CONSTANTS FOR TABLE INFO
+         */
         // Table name
         public static final String TABLE_NAME = "pets";
 
 
-        /** The content URI to access the pet data in the provider */
+        /**
+         * The content URI to access the pet data in the provider
+         */
         public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_PET);
 
-        /** Column headings */
+        /**
+         * Column headings
+         */
         public static final String _ID = BaseColumns._ID;
         public static final String COLUMN_PET_NAME = "name";
         public static final String COLUMN_PET_BREED = "breed";
         public static final String COLUMN_PET_GENDER = "gender";
         public static final String COLUMN_PET_WEIGHT = "weight";
 
-        /** CONSTANTS FOR GENDER */
+        /**
+         * CONSTANTS FOR GENDER
+         */
         public static final int GENDER_UNKNOWN = 0;
         public static final int GENDER_MALE = 1;
         public static final int GENDER_FEMALE = 2;
 
+        /**
+         * Returns wether or not the given gender is {@link #GENDER_UNKNOWN}, {@link #GENDER_MALE},
+         * or {@link #GENDER_FEMALE}
+         */
+        public static boolean isValidGender(int gender) {
+            return gender == GENDER_UNKNOWN || gender == GENDER_MALE || gender == GENDER_FEMALE;
+        }
     }
 
 
