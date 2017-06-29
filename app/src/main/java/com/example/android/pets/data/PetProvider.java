@@ -142,7 +142,6 @@ public class PetProvider extends ContentProvider {
         if (name == null || name.equals("")) {
             throw new IllegalArgumentException("Pet requires a name");
         }
-        // TODO: Finish sanity checking the rest of the attribues in ContentValues
         // Check that the breed is not null
         String breed = contentValues.getAsString(PetEntry.COLUMN_PET_BREED);
         if (breed == null || breed.equals("")) {
